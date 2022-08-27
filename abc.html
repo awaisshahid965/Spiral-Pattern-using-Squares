@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+
+		body {
+			overflow: hidden;
+			height: 100vh;
+			width: 100vw;
+			background-color: #161616;
+		}
+
+		div {
+			position: absolute;
+			top: calc(50% - 250px);
+			left: calc(50% - 250px);
+			width: 500px;
+			height: 500px;
+			border: 1px solid rgba(255, 255, 255, .25);
+		}
+
+		@keyframes changeColor {
+			form {
+				background-color: rgba(140, 0, 255, .7)
+			} to {
+				background-color: rgba(140, 0, 255, 1)
+			}
+		}
+		
+	</style>
+</head>
+<body>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	const body = document.querySelector('body');
+	const square = rotation => `<div style="transform: rotate(${rotation}deg);"></div>`;
+
+	for (let i = 0; i < 1000; i += 3) {
+		setTimeout(() => {
+			body.insertAdjacentHTML('beforeend', square(i));
+		}, 10 * i);
+	}
+	
+</script>
